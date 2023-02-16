@@ -1,0 +1,58 @@
+﻿<Window x:Class="medtremhome.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:medtremhome"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="#FFD99C9C">
+    <Grid Margin="268,0,272,75">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Margin="18,1,-10,-49" Background="#FFD9D1D1" Grid.ColumnSpan="2">
+            <TextBox x:Name="firsttext" HorizontalAlignment="Left" Margin="114,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="lasttext" HorizontalAlignment="Left" Margin="114,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="first name" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top"/>
+            <Label Content="App#" HorizontalAlignment="Left" Margin="18,12,0,0" VerticalAlignment="Top"/>
+            <Label Content="Last name" HorizontalAlignment="Left" Margin="22,89,0,0" VerticalAlignment="Top"/>
+            <Label Content="how many room" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Height="26" Width="115">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-1.763"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="monthly pay" HorizontalAlignment="Left" Margin="29,200,0,0" VerticalAlignment="Top"/>
+            
+            <Label Content="room" HorizontalAlignment="Left" Margin="40,149,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+            <Button x:Name="addbotton" Content="add /update" HorizontalAlignment="Left" Margin="134,272,0,0" VerticalAlignment="Top" Height="37" Width="100" Click="addbotton_Click"/>
+            <Button x:Name="removebotton" Content="remove" HorizontalAlignment="Left" Margin="156,330,0,0" VerticalAlignment="Top" Click="removebotton_Click"/>
+        </Grid>
+        <ListBox x:Name="llisttext" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="-260,20,135,-20" SelectionChanged="llisttext_SelectionChanged"/>
+        <RichTextBox Margin="140,12,-256,134" Grid.Column="1">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Label HorizontalAlignment="Left" Margin="31,21,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="apptext" HorizontalAlignment="Left" Margin="130,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="roomtext" HorizontalAlignment="Left" Margin="130,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="paymenttext" HorizontalAlignment="Left" Margin="130,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <Button x:Name="paymentbotton" Content="monthly due" HorizontalAlignment="Left" Height="0" Margin="116,379,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="0" Margin="104,382,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Button x:Name="monthlyduebotton" Content="monthly due" HorizontalAlignment="Left" Margin="40,303,0,0" VerticalAlignment="Top" Click="monthlyduebotton_Click"/>
+        <StackPanel Grid.Column="1" Margin="160,240,-256,-59" Background="#FFCE5353">
+            <Button x:Name="paymentinfullbotton" Content="payment in full" Click="paymentinfullbotton_Click"/>
+            <TextBox x:Name="paymenttext_Copy" TextWrapping="Wrap" Width="201" Height="37"/>
+            <Button x:Name="partialpaymentbotton" Content="partialpayment" Height="26"/>
+            <Label Content="current due" FontSize="20" FontWeight="Bold"/>
+        </StackPanel>
+    </Grid>
+</Window>
